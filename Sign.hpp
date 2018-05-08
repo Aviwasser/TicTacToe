@@ -21,4 +21,4 @@ inline bool  operator==(const Sign& s,const char& c){
   return s.GetSign()==c;
    
 }
-};
+
