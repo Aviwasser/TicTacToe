@@ -12,7 +12,7 @@ Board::Board(const int& len){
         }
     }
 }
-Sign& Board:: operator[](const vector<int> v) const{
+Sign& Board:: operator[](const vector<int> v){
     if(v[0]>=0 && v[0]<len && v[1]>=0 && v[1]<len)
         return brd[v[0]][v[1]];
     throw IllegalCoordinateException (v[0],v[1]);
@@ -25,6 +25,7 @@ Board& Board:: operator=(const char& c){
             this->brd[i][j]=s;
         }
     }
+return *this;
 }
 
 // Board::~Board(){

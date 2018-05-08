@@ -12,12 +12,12 @@ char Sign::GetSign() const{
  return this->a;
 }
 
-char& Sign:: operator=(const char& c){
+Sign& Sign:: operator=(const char& c){
 if(c!='X'&&c!='O'&&c!='.')
   throw IllegalCharException(c);
 else
   this->a=c;
-   
+return *this;
 }
 Sign& Sign::operator=(const Sign& c)
 {

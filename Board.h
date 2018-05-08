@@ -10,7 +10,7 @@ class Board{
     Sign** brd;
 public:
     Board(const int&);
-    Sign& operator[](vector<int> v) const;
+    Sign& operator[](vector<int> v);
     Board& operator=(const char&);
     friend ostream& operator<< (ostream& out, const Board &b);
   //  ~Board();
