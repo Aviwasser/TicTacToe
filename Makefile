@@ -17,4 +17,4 @@ Cordinate.o: Cordinate.cpp Cordinate.hpp Board.h
 	$(CXX) $(CXXFLAGS) -c  Cordinate.cpp -o Cordinate.o
 
 clean:
-	rm *.o 
+	rm *.o output
