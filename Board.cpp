@@ -28,10 +28,10 @@ Board& Board:: operator=(const char& c){
     if(c!='.'&&c!='X'&&c!='O')
         throw IllegalCharException(c);
     else{
-        Sign s(c);
+        //Sign s(c);
         for(int i=0;i<len;++i){
             for(int j=0;j<len;++j){
-                this->brd[i][j]=s;
+                this->brd[i][j]=c;
             }
         }
     }
