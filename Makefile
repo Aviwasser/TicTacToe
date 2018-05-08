@@ -1,7 +1,7 @@
 CXX=clang++-5.0
 CXXFLAGS=-std=c++17
-all: Board.o Sign.o IllegalCoordinateException.o IllegalCharException.o Cordinate.o
-Board.o: Board.cpp Board.h Sign.hpp Cordinate.hpp 
+all: Board.o Sign.o IllegalCoordinateException.o IllegalCharException.o 
+Board.o: Board.cpp Board.h Sign.hpp
 	$(CXX) $(CXXFLAGS) -c  Board.cpp -o Board.o
 	
 Sign.o: Sign.cpp Sign.hpp Board.h IllegalCharException.hpp
@@ -14,8 +14,6 @@ IllegalCoordinateException.o: IllegalCoordinateException.cpp IllegalCoordinateEx
 IllegalCharException.o: IllegalCharException.cpp IllegalCharException.hpp
 	$(CXX) $(CXXFLAGS) -c  IllegalCharException.cpp -o IllegalCharException.o
 
-Cordinate.o: Cordinate.cpp Cordinate.hpp Board.h
-	$(CXX) $(CXXFLAGS) -c  Cordinate.cpp -o Cordinate.o
 
 clean:
 	rm *.o 
