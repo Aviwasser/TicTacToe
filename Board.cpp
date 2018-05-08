@@ -2,10 +2,6 @@
 
 using namespace std;
 
-Board::Board(){
-    this->len=0;
-    this->brd=nullptr;
-}
 Board::Board(int len){
     this->len=len;
     this->brd=new Sign*[len];

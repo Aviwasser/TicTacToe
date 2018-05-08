@@ -9,7 +9,6 @@ class Board{
     int len;
     Sign** brd;
 public:
-    Board();
     Board(int);
     Board(const Board& other);
     Sign& operator[](const vector<int> v);
