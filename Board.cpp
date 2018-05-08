@@ -1,14 +1,25 @@
-#include "Board.h"
+#include "Board.hpp"
 
 using namespace std;
 
-Board::Board(const int& len){
+Board::Board(){
+    this->len=0;
+    this->brd=nullptr;
+}
+Board::Board(int len){
     this->len=len;
     this->brd=new Sign*[len];
     for(int i=0;i<len;++i){
         this->brd[i]=new Sign[len];
-        for(int j=0;j<len;++j){
-           this-> brd[i][j]=Sign();
+    }
+}
+Board::Board(const Board& other){
+    this->len=other.len;
+    this->brd=new Sign*[other.len];
+    for(int i=0;i<other.len;++i){
+        this->brd[i]=new Sign[other.len];
+        for(int j=0;j<other.len;++j){
+           this->brd[i][j]=other.brd[i][j];
         }
     }
 }
@@ -27,9 +38,20 @@ Board& Board:: operator=(const char& c){
     }
 return *this;
 }
-
-// Board::~Board(){
-//     for(int i=0;i<this->len;++i){
-//         delete[] brd[i];
-//     }
-// }
+Board& Board:: operator=(const Board& b){
+    this->~Board();
+    this->len=b.len;
+    this->brd=new Sign*[b.len];
+    for(int i=0;i<b.len;++i){
+        this->brd[i]=new Sign[b.len];
+        for(int j=0;j<b.len;++j){
+           this->brd[i][j]=b.brd[i][j];
+        }
+    }
+}
+Board::~Board(){
+    for(int i=0;i<this->len;++i){
+        delete[] brd[i];
+    }
+    delete[] brd;
+}
