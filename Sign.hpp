@@ -1,4 +1,5 @@
 #include <iostream>
+#include "IllegalCharException.hpp"
 using namespace std;
 class Sign{
     char a;

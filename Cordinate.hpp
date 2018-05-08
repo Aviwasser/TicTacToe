@@ -6,9 +6,8 @@ class Cordinate{
         int r;
         int c;
     public:
-        Cordinate(int r, int c);
+        Cordinate(int, int);
         int GetRow() const;
         int GetColumn() const;
         const Cordinate& operator=(const Cordinate&);
-      //  ~Cordinate();
 };

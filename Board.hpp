@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Cordinate.hpp"
 #include "Sign.hpp"
+#include "IllegalCoordinateException.hpp"
 using namespace std;
 
 class Board{
@@ -9,7 +10,7 @@ class Board{
 public:
     Board(const int&);
     Sign& operator[](const Cordinate& co) const;
-    Sign& operator=(const Sign&);
+    Board& operator=(const char&);
     friend ostream& operator<< (ostream& out, const Board &b);
     ~Board();
 };

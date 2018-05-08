@@ -12,7 +12,3 @@ const Cordinate& Cordinate:: operator=(const Cordinate& other){
     this->c=other.c;
     return *this;
 }
-// Cordinate:: ~Cordinate(){
-//     delete &c;
-//     delete &r;
-// } 
