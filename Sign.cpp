@@ -7,11 +7,7 @@ Sign::Sign(const char& n){
 Sign::Sign(){
   this->a='.';
 }
-bool Sign:: operator==(const char& c){
 
-  return this->a==c;
-   
-}
 char Sign::GetSign() const{
  return this->a;
 }
