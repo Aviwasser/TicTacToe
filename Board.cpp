@@ -25,11 +25,14 @@ Sign& Board:: operator[](const vector<int> v){
     throw IllegalCoordinateException (v[0],v[1]);
 }
 Board& Board:: operator=(const char& c){
-    Sign s(c);
-   //this->brd[1][2]=c;
-    for(int i=0;i<len;++i){
-        for(int j=0;j<len;++j){
-            this->brd[i][j]=s;
+    if(c!='.'&&c!='X'&&c!='O')
+        throw IllegalCharException(c);
+    else{
+        Sign s(c);
+        for(int i=0;i<len;++i){
+            for(int j=0;j<len;++j){
+                this->brd[i][j]=s;
+            }
         }
     }
 return *this;
