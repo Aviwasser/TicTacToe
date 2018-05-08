@@ -11,6 +11,7 @@ Sign::Sign(){
 char Sign::GetSign() const{
  return this->a;
 }
+
 char& Sign:: operator=(const char& c){
 if(c!='X'&&c!='O'&&c!='.')
   throw IllegalCharException(c);

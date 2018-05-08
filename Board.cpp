@@ -1,4 +1,4 @@
-#include "Board.h"
+#include "Board.hpp"
 
 using namespace std;
 
@@ -12,10 +12,10 @@ Board::Board(const int& len){
         }
     }
 }
-Sign& Board:: operator[](const Cordinate& co) const{
-    if(co.GetRow()>=0&&co.GetRow()<len&&co.GetColumn()>=0&&co.GetColumn()<len)
-        return brd[co.GetRow()][co.GetColumn()];
-    throw IllegalCoordinateException (co.GetRow(),co.GetColumn());
+Sign& Board:: operator[](const vector<int> v) const{
+    if(v[0]>=0 && v[0]<len && v[1]>=0 && v[1]<len)
+        return brd[v[0]][v[1]];
+    throw IllegalCoordinateException (v[0],v[1]);
 }
 Board& Board:: operator=(const char& c){
     Sign s(c);
@@ -26,8 +26,9 @@ Board& Board:: operator=(const char& c){
         }
     }
 }
-Board::~Board(){
-    for(int i=0;i<this->len;++i){
-        delete[] brd[i];
-    }
-}
+
+// Board::~Board(){
+//     for(int i=0;i<this->len;++i){
+//         delete[] brd[i];
+//     }
+// }
