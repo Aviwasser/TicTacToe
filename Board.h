@@ -5,8 +5,14 @@
 using namespace std;
 
 class Board{
+/*
+*Declarence of varible
+*/    
     int len;
     Sign** brd;
+/*
+*Declarence on function
+*/    
 public:
     Board(int);
     Board(const Board& other);
@@ -16,6 +22,9 @@ public:
     friend ostream& operator<< (ostream& out, const Board &b);
     ~Board();
 };
+/*
+*Print the Board
+*/
 inline ostream&  operator<< (ostream& out, const Board &b){
     for(int i=0;i<b.len;++i){
         for(int j=0;j<b.len;++j){
