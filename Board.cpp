@@ -28,7 +28,6 @@ Board& Board:: operator=(const char& c){
     if(c!='.'&&c!='X'&&c!='O')
         throw IllegalCharException(c);
     else{
-        //Sign s(c);
         for(int i=0;i<len;++i){
             for(int j=0;j<len;++j){
                 this->brd[i][j]=c;
@@ -47,6 +46,7 @@ Board& Board:: operator=(const Board& b){
            this->brd[i][j]=b.brd[i][j];
         }
     }
+    return *this;
 }
 Board::~Board(){
     for(int i=0;i<this->len;++i){
