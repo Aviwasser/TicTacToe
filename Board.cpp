@@ -37,12 +37,12 @@ Sign& Board:: operator[](const vector<int> v){
 *Opreator input to Change Sign in the Board
 */
 Board& Board:: operator=(const char& c){
-        for(int i=0;i<len;++i){
-            for(int j=0;j<len;++j){
-                this->brd[i][j]=c;
-            }
+    for(int i=0;i<len;++i){
+        for(int j=0;j<len;++j){
+            this->brd[i][j]=c;
         }
-return *this;
+    }
+    return *this;
 }
 /*
 *Operator input to change the Board to other
