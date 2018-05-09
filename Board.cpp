@@ -38,16 +38,12 @@ Board& Board:: operator=(const char& c){
 return *this;
 }
 Board& Board:: operator=(const Board& b){
-    for(int i=0;i<this->len;++i){
-        delete[] brd[i];
-    }
-    delete[] brd;
-    //this->~Board();
+    this->~Board();
     this->len=b.len;
-    this->brd=new Sign*[b.len];
-    for(int i=0;i<b.len;++i){
-        this->brd[i]=new Sign[b.len];
-        for(int j=0;j<b.len;++j){
+    this->brd=new Sign*[len];
+    for(int i=0;i<len;++i){
+        this->brd[i]=new Sign[len];
+        for(int j=0;j<len;++j){
            this->brd[i][j]=b.brd[i][j];
         }
     }
