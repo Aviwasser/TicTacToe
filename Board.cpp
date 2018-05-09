@@ -1,7 +1,9 @@
 #include "Board.h"
 
 using namespace std;
-
+/*
+*Default Constructor
+*/
 Board::Board(int len){
     this->len=len;
     this->brd=new Sign*[len];
@@ -9,6 +11,9 @@ Board::Board(int len){
         this->brd[i]=new Sign[len];
     }
 }
+/*
+*Copy Constructor
+*/
 Board::Board(const Board& other){
     this->len=other.len;
     this->brd=new Sign*[other.len];
@@ -19,11 +24,17 @@ Board::Board(const Board& other){
         }
     }
 }
+/*
+*Opreator to return Sign in Some Cooridnate
+*/
 Sign& Board:: operator[](const vector<int> v){
     if(v[0]>=0 && v[0]<len && v[1]>=0 && v[1]<len)
         return brd[v[0]][v[1]];
     throw IllegalCoordinateException (v[0],v[1]);
 }
+/*
+*Opreator input to Change Sign in the Board
+*/
 Board& Board:: operator=(const char& c){
     if(c!='.'&&c!='X'&&c!='O')
         throw IllegalCharException(c);
@@ -36,6 +47,9 @@ Board& Board:: operator=(const char& c){
     }
 return *this;
 }
+/*
+*Operator input to change the Board to other
+*/
 Board& Board:: operator=(const Board& b){
     this->~Board();
     this->len=b.len;
@@ -48,6 +62,9 @@ Board& Board:: operator=(const Board& b){
     }
     return *this;
 }
+/*
+*Destractor
+*/
 Board::~Board(){
     for(int i=0;i<this->len;++i){
         delete[] brd[i];
