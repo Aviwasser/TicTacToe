@@ -38,6 +38,7 @@ Board& Board:: operator=(const char& c){
 return *this;
 }
 Board& Board:: operator=(const Board& b){
+    this->~Board();
     this->len=b.len;
     this->brd=new Sign*[b.len];
     for(int i=0;i<b.len;++i){
