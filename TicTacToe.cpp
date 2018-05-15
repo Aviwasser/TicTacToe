@@ -1,15 +1,14 @@
-#include "TicTacToe.hpp"
+#include "TicTacToe.h"
 #include <iostream>
 using namespace std;
 
 TicTacToe:: TicTacToe(int len)  {
     Board other(len);
     this->brd=other;
-    }
-   
-void TicTacToe:: print()  {
-    cout<<this->brd<<endl;
 }
-void TicTacToe:: game() {
+Board TicTacToe:: board() const{
+    return this->brd;
+}   
+void TicTacToe:: play() {
     
 }

@@ -3,11 +3,11 @@ using namespace std;
 
 class Coordinate{
     private:
-        int r;
-        int c;
+        uint r;
+        uint c;
     public:
-        Coordinate(int, int);
-        int GetRow() const;
-        int GetColumn() const;
+        Coordinate(uint, uint);
+        uint GetRow() const;
+        uint GetColumn() const;
         const Coordinate& operator=(const Coordinate&);
 };

@@ -1,12 +1,12 @@
 #include "Coordinate.hpp"
 using namespace std;
 
-Coordinate::Coordinate(int r,int c){
+Coordinate::Coordinate(uint r,uint c){
     this->r=r;
     this->c=c;
 }
-int Coordinate:: GetRow() const {return this->r;}
-int Coordinate:: GetColumn() const {return this->c;}
+uint Coordinate:: GetRow() const {return this->r;}
+uint Coordinate:: GetColumn() const {return this->c;}
 const Coordinate& Coordinate:: operator=(const Coordinate& other){
     this->r=other.r;
     this->c=other.c;
