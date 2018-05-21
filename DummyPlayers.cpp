@@ -32,7 +32,9 @@ const Coordinate YXPlayer::play(const Board& board) {
  * The illegal player tries to put a char on a cell owned by the other player.
  */
 const Coordinate IllegalPlayer::play(const Board& board) {
-	char charOfOtherPlayer ='X';
+	char charOfOtherPlayer = (
+		myChar=='X'? 'O': 'X'
+		);
 	for (uint y=0; y<board.size(); ++y) {
 		for (uint x=0; x<board.size(); ++x) {
 			Coordinate c{x,y};

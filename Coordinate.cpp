@@ -1,6 +1,9 @@
 #include "Coordinate.hpp"
 using namespace std;
-
+Coordinate::Coordinate(){
+    this->r=0;
+    this->c=0;
+}
 Coordinate::Coordinate(uint r,uint c){
     this->r=r;
     this->c=c;

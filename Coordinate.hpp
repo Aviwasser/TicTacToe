@@ -6,6 +6,7 @@ class Coordinate{
         uint r;
         uint c;
     public:
+        Coordinate();
         Coordinate(uint, uint);
         uint GetRow() const;
         uint GetColumn() const;
