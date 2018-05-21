@@ -22,9 +22,14 @@ Board TicTacToe:: board() const{
     return brd;
 }
 void TicTacToe:: play(Player& x, Player& o) {
+    for(uint i=0;i<brd.size();++i){
+        for(uint j=0;j<brd.size();++j){
+           this->brd[{i,j}]='.';
+        }
+    }
     int count=0;
    
-    while(count<this->brd.size()){
+    while(count<this->brd.size()*this->brd.size()){
         Coordinate c=x.play(this->brd);
         if (this->brd[c]!='.'){
             *win=o;
@@ -32,24 +37,24 @@ void TicTacToe:: play(Player& x, Player& o) {
         }
       this->brd[c]='X'; 
        if(check(c)){
-           *win=x;
+           win=&x;
            break;
        }
        c=o.play(this->brd);
        if (this->brd[c]!='.'){
-            *win=x;
+            win=&x;
             break;
         }
       this->brd[c]='O';
       
       if(check(c)){
-           *win=o;
+           win=&o;
            break;
        }
         count++;
     }
     if(count>=this->brd.size())
-        *win=o;
+        win=&o;
     //cout<<this->win->name();
 }
 bool TicTacToe:: check(Coordinate c){
