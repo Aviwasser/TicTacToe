@@ -1,6 +1,5 @@
 #pragma once
 
-using namespace std;
 #include "DummyPlayers.h"
 class TicTacToe  {
   private:
