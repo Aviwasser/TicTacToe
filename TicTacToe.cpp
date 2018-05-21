@@ -26,13 +26,22 @@ void TicTacToe:: play(Player& x, Player& o) {
    
     while(count<this->brd.size()){
         Coordinate c=x.play(this->brd);
-      this->brd[c]='X';
-       c=o.play(this->brd);
+        if (this->brd[c]!='.'){
+            *win=o;
+            break;
+        }
+      this->brd[c]='X'; 
        if(check(c)){
            *win=x;
            break;
        }
+       c=o.play(this->brd);
+       if (this->brd[c]!='.'){
+            *win=x;
+            break;
+        }
       this->brd[c]='O';
+      
       if(check(c)){
            *win=o;
            break;
@@ -41,7 +50,7 @@ void TicTacToe:: play(Player& x, Player& o) {
     }
     if(count>=this->brd.size())
         *win=o;
-    cout<<this->win;
+    //cout<<this->win->name();
 }
 bool TicTacToe:: check(Coordinate c){
     bool flag=true;
