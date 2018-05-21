@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include "Sign.hpp"
 #include "Coordinate.hpp"
