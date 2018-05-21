@@ -22,39 +22,53 @@ Board TicTacToe:: board() const{
     return brd;
 }
 void TicTacToe:: play(Player& x, Player& o) {
+    //Intilize board
     for(uint i=0;i<brd.size();++i){
         for(uint j=0;j<brd.size();++j){
            this->brd[{i,j}]='.';
         }
     }
+    x.setChar('X');
+    o.setChar('O');
     int count=0;
-   
     while(count<this->brd.size()*this->brd.size()){
-        Coordinate c=x.play(this->brd);
-        if (this->brd[c]!='.'){
+        Coordinate c;
+        try{
+            c=x.play(this->brd);
+            if (c.GetRow()<0||c.GetRow()>=brd.size()||c.GetColumn()<0||c.GetColumn()>=brd.size()||this->brd[c]!='.'){
+                throw std::string("Illegal Move");
+            }
+        }
+        catch(...){
             *win=o;
-            break;
+            return;
         }
       this->brd[c]='X'; 
        if(check(c)){
            win=&x;
-           break;
+           return;
        }
-       c=o.play(this->brd);
-       if (this->brd[c]!='.'){
+       try{
+            c=o.play(this->brd);
+            if (c.GetRow()<0||c.GetRow()>=brd.size()||c.GetColumn()<0||c.GetColumn()>=brd.size()||this->brd[c]!='.'){
+                throw std::string("Illegal Move");
+                win=&x;
+                return;
+            }
+       }
+       catch(...){
             win=&x;
-            break;
-        }
+            return;
+       }
       this->brd[c]='O';
       
       if(check(c)){
            win=&o;
-           break;
+           return;
        }
         count++;
     }
-    if(count>=this->brd.size())
-        win=&o;
+    win=&o;
     //cout<<this->win->name();
 }
 bool TicTacToe:: check(Coordinate c){
