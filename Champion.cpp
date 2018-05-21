@@ -2,11 +2,7 @@
 
 
 const Coordinate Champion::play(const Board& board){
-   unsigned int i=0,j=0,size=board.size()-1;
-    //cout<<"h00"<<endl;
-//     Coordinate c{i,j};
-//    if(board[c]=='.')
-//    return c;
+   uint i=0,j=0,size=board.size()-1;
    
      Coordinate c={size,j};
      if(board[c]=='.')
