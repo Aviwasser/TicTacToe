@@ -39,7 +39,7 @@ Board::Board(const Board& other){
 *Opreator to return Sign in Some Cooridnate
 */
 Sign& Board:: operator[](const Coordinate& cor)const {
-    if(cor.GetRow()>=0&&cor.GetRow()<len&&cor.GetColumn()>=0&&cor.GetColumn()<len)
+    if(cor.GetRow()<len&&cor.GetColumn()<len)
         return brd[cor.GetRow()][cor.GetColumn()];
     throw IllegalCoordinateException (cor.GetRow(),cor.GetColumn());
 }
