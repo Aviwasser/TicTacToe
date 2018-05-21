@@ -1,5 +1,7 @@
+#pragma once
+
 #include <iostream>
-//#include "Coordinate.hpp"
+
 #include "Board.h"
 using namespace std;
  class Player {
