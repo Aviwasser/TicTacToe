@@ -68,7 +68,7 @@ void TicTacToe:: play(Player& x, Player& o) {
        }
         count++;
     }
-    win=&x;
+    win=&o;
     //cout<<this->win->name();
 }
 bool TicTacToe:: check(Coordinate c){
