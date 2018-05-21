@@ -19,14 +19,14 @@ const Coordinate Champion::play(const Board& board){
      if(board[c]=='.')
    return c;
 
-   for(i = 1; i < size; i++){
+   for(i = 1; i <= size; i++){
           c={size,i};
          if(board[c]=='.')
              return c;
     }
    
-    for(i = 0; i < size; i++){
-        for(j = 0; j < size; j++){
+    for(i = 0; i <= size; i++){
+        for(j = 0; j <= size; j++){
             c={i,j};
              if(board[c]=='.')
              return c;
