@@ -28,7 +28,7 @@ void TicTacToe:: play(Player& x, Player& o) {
         Coordinate c;
         try{
             c=x.play(this->brd);
-            if (c.GetRow()<0||c.GetRow()>=brd.size()||c.GetColumn()<0||c.GetColumn()>=brd.size()||this->brd[c]!='.'){
+            if (c.GetRow()>=brd.size()||c.GetColumn()>=brd.size()||this->brd[c]!='.'){
                 throw std::string("Illegal Move");
             }
         }
@@ -46,7 +46,7 @@ void TicTacToe:: play(Player& x, Player& o) {
             break;
        try{
             c=o.play(this->brd);
-            if (c.GetRow()<0||c.GetRow()>=brd.size()||c.GetColumn()<0||c.GetColumn()>=brd.size()||this->brd[c]!='.'){
+            if (c.GetRow()>=brd.size()||c.GetColumn()>=brd.size()||this->brd[c]!='.'){
                 throw std::string("Illegal Move");
                 win=&x;
                 return;
