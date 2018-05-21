@@ -11,13 +11,6 @@ TicTacToe:: TicTacToe(int len)  {
 void TicTacToe:: print()  {
     cout<<this->brd<<endl;
 }
-// YXPlayer& TicTacToe:: winner() {
-//    //  if(this->win.compare("XYPlayer")==0)
-//    // return XYPlayer{};
-//    cout<<this->win;
-//    YXPlayer *x;
-//     return *x;
-// }
 Board TicTacToe:: board() const{
     return brd;
 }
@@ -48,6 +41,9 @@ void TicTacToe:: play(Player& x, Player& o) {
            win=&x;
            return;
        }
+       count++;
+       if(count>=this->brd.size()*this->brd.size())
+            break;
        try{
             c=o.play(this->brd);
             if (c.GetRow()<0||c.GetRow()>=brd.size()||c.GetColumn()<0||c.GetColumn()>=brd.size()||this->brd[c]!='.'){
@@ -69,7 +65,6 @@ void TicTacToe:: play(Player& x, Player& o) {
         count++;
     }
     win=&o;
-    //cout<<this->win->name();
 }
 bool TicTacToe:: check(Coordinate c){
     bool flag=true;
