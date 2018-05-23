@@ -2,18 +2,28 @@
 
 #include <iostream>
 using namespace std;
-
+/*
+*Constructor
+*/
 TicTacToe:: TicTacToe(int len)  {
     Board other(len);
     this->brd=other;
     }
-   
+/*
+*Print the game
+*/   
 void TicTacToe:: print()  {
     cout<<this->brd<<endl;
 }
+/*
+*Return the table
+*/
 Board TicTacToe:: board() const{
     return brd;
 }
+/*
+*Function for actual game always check if there is a winner
+*/
 void TicTacToe:: play(Player& x, Player& o) {
     //Intilize board
     for(uint i=0;i<brd.size();++i){
