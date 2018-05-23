@@ -3,10 +3,16 @@
 using namespace std;
 
 class Coordinate{
+/*
+*Declarence of varible
+*/       
     private:
         uint r;
         uint c;
     public:
+/*
+*Declarence on function
+*/       
         Coordinate();
         Coordinate(uint, uint);
         uint GetRow() const;
